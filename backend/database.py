@@ -42,8 +42,8 @@ class Settings(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     personal_number = Column(String, default="", index=True)
     timeout_seconds = Column(Integer, default=15)
-    system_prompt = Column(Text, default="You are a helpful bilingual receptionist assistant who speaks both Hebrew and English. Greet callers warmly, take messages, and answer basic questions about the business.")
-    greeting_message = Column(Text, default="Hi, you've reached the assistant. שלום, הגעתם לעוזר. How can I help? איך אפשר לעזור?")
+    system_prompt = Column(Text, default="You are a helpful receptionist assistant. Greet callers warmly, take clear messages, and answer basic questions about the business. Be concise, professional, and friendly.")
+    greeting_message = Column(Text, default="Hi, you've reached the assistant. How can I help you today?")
     gemini_voice = Column(String, default="Kore")
     twilio_number = Column(String, default="", index=True)
     summary_language = Column(String, default="")  # e.g. "English" — translate summaries to this language; empty = no translation
