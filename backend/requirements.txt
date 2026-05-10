@@ -1,0 +1,17 @@
+fastapi
+uvicorn[standard]
+twilio
+python-dotenv
+sqlalchemy
+httpx
+pydantic
+python-multipart
+numpy
+websockets
+authlib
+python-jose[cryptography]
+google-genai
+aiosmtplib
+psycopg2-binary
+alembic
+pytz

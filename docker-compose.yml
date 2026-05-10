@@ -1,0 +1,46 @@
+services:
+
+  backend:
+    build:
+      context: ./backend
+    # Not exposed publicly — frontend proxies to it internally
+    restart: unless-stopped
+    environment:
+      # Database (PostgreSQL). Override via .env or shell.
+      DATABASE_URL: ${DATABASE_URL:-postgresql://postgres:postgres@db:5432/frontline-ai}
+
+      # Twilio
+      TWILIO_ACCOUNT_SID: ${TWILIO_ACCOUNT_SID}
+      TWILIO_AUTH_TOKEN: ${TWILIO_AUTH_TOKEN}
+      TWILIO_PHONE_NUMBER: ${TWILIO_PHONE_NUMBER}
+
+      # App
+      APP_BASE_URL: ${APP_BASE_URL}
+      PUBLIC_URL: ${PUBLIC_URL}
+      FRONTEND_URL: ${FRONTEND_URL}
+      CORS_ORIGINS: ${CORS_ORIGINS}
+
+      # Gemini
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+
+      # Google OAuth
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID}
+      GOOGLE_CLIENT_SECRET: ${GOOGLE_CLIENT_SECRET}
+      JWT_SECRET: ${JWT_SECRET}
+
+      # Email (SMTP)
+      SMTP_HOST: ${SMTP_HOST:-smtp.gmail.com}
+      SMTP_PORT: ${SMTP_PORT:-587}
+      SMTP_USER: ${SMTP_USER}
+      SMTP_PASS: ${SMTP_PASS}
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_BASE: ""
+    ports:
+      - "80:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
