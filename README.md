@@ -2,14 +2,14 @@
 
 > Your AI receptionist that picks up when you can't.
 
-Phone rings, you're in a meeting, driving, asleep, or just done for the day. Instead of voicemail, **FrontlineAI** answers — in Hebrew or English, in your own voice's tone — talks to the caller like a human, books appointments straight into your Google Calendar, and drops a clean summary in your inbox before the line goes dead.
+Phone rings, you're in a meeting, driving, asleep, or just done for the day. Instead of voicemail, **FrontlineAI** answers — talks to the caller like a human, books appointments straight into your Google Calendar, and drops a clean summary in your inbox before the line goes dead.
 
 You wake up to a dashboard of calls already triaged: who called, what they wanted, what was promised, and a full transcript you can scroll through with coffee.
 
 ### What it does
 
 - **Answers your unanswered calls** — Twilio rings your phone first; if you don't pick up within your chosen timeout, the AI takes over seamlessly.
-- **Talks like a person** — powered by Google's `gemini-3.1-flash-live-preview` for real-time, low-latency voice conversations. Bilingual out of the box (Hebrew + English).
+- **Talks like a person** — powered by Google's `gemini-3.1-flash-live-preview` for real-time, low-latency voice conversations. English by default; speaks any language Gemini Live supports (Hebrew included) — just edit the system prompt and greeting in Settings.
 - **Books appointments** — connect your Google Calendar once, and the agent can check availability and schedule meetings during the call.
 - **Emails you a summary** — every call ends with a structured summary in your inbox: caller, intent, follow-up actions.
 - **Dashboard for everything** — React-based UI with full transcripts, call history, voice picker, and settings. Customize the agent's persona, greeting, and voice in seconds.

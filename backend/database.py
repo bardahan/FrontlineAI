@@ -46,7 +46,7 @@ class Settings(Base):
     greeting_message = Column(Text, default="Hi, you've reached the assistant. How can I help you today?")
     gemini_voice = Column(String, default="Kore")
     twilio_number = Column(String, default="", index=True)
-    summary_language = Column(String, default="")  # e.g. "English" — translate summaries to this language; empty = no translation
+    summary_language = Column(String, default="English")  # e.g. "English" — translate summaries to this language; empty = no translation
     timezone = Column(String, default="UTC", server_default="UTC")  # IANA timezone, e.g. "Asia/Jerusalem" — used as fallback when CallerCountry is ambiguous
     user_id = Column(Integer, ForeignKey("users.id"), nullable=True)
 
